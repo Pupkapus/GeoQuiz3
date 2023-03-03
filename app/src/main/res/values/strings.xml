@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <string name="true_button">Правда</string>
+    <string name="false_button">Ложь</string>
+    <string name="correct">Молодчик</string>
+    <string name="incorrect">А ты уверен?</string>
+    <string name="question_oceans">В мире 4 океана?</string>
+    <string name="question_Russia">Москва столица России?</string>
+    <string name="question_africa">Нигерия часть Африки?</string>
+    <string name="question_americas">Канада в Южной Америке?</string>
+    <string name="question_asia">Байкал самое глубокое озеро в мире?</string>
+    <string name="question_australia">Австралия омывается двумя океанами?</string>
+</resources>

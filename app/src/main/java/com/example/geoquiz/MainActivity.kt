@@ -66,9 +66,19 @@ class MainActivity : AppCompatActivity() {
 
 
         questionTextView.setOnClickListener{
-            currentindex=(currentindex+1) % questionBank.size
-            val questionTextResId = questionBank[currentindex].textResId
-            questionTextView.setText(questionTextResId)
+            if (currentindex<5) {
+                currentindex = (currentindex + 1) % questionBank.size
+                val questionTextResId = questionBank[currentindex].textResId
+                questionTextView.setText(questionTextResId)
+                if (answers[currentindex] == 0) {
+                    true_button.isEnabled = true
+                    false_button.isEnabled = true
+                }
+                else {
+                    true_button.isEnabled = false
+                    false_button.isEnabled = false
+                }
+            }
         }
 
         true_button.setOnClickListener{
@@ -108,33 +118,36 @@ class MainActivity : AppCompatActivity() {
         questionTextView.setText(questionTextResId)
 
         next_button.setOnClickListener{
-            currentindex=(currentindex+1) % questionBank.size
-            val questionTextResId = questionBank[currentindex].textResId
-            questionTextView.setText(questionTextResId)
-            if (check[currentindex]==false){
-                true_button.isEnabled=true
-                false_button.isEnabled=true
+            if (currentindex<5) {
+                currentindex = (currentindex + 1) % questionBank.size
+                val questionTextResId = questionBank[currentindex].textResId
+                questionTextView.setText(questionTextResId)
+                if (answers[currentindex] == 0) {
+                    true_button.isEnabled = true
+                    false_button.isEnabled = true
+                }
+                else {
+                    true_button.isEnabled = false
+                    false_button.isEnabled = false
+                }
             }
         }
 
         previous_button.setOnClickListener{
             if (currentindex==0) {
-                val questionTextResId = questionBank[0].textResId
-                questionTextView.setText(questionTextResId)
-                if (check[currentindex]==true)
-                {
-                    true_button.isEnabled=false
-                    false_button.isEnabled=false
-                }
+
             }
             else {
                 currentindex = ((currentindex - 1) % questionBank.size)
                 val questionTextResId = questionBank[currentindex].textResId
                 questionTextView.setText(questionTextResId)
-                if (check[currentindex]==true)
-                {
-                    true_button.isEnabled=false
-                    false_button.isEnabled=false
+                if (answers[currentindex] == 0) {
+                    true_button.isEnabled = true
+                    false_button.isEnabled = true
+                }
+                else {
+                    true_button.isEnabled = false
+                    false_button.isEnabled = false
                 }
             }
         }
